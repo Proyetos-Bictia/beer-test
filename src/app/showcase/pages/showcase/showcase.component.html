@@ -1,0 +1,45 @@
+<div class="general-wrapper">
+  <section class="dsc-search">
+    <div class="dsc-input">
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Search...</mat-label>
+          <input 
+            matInput
+            #message
+            maxlength="256" 
+            placeholder="Poker"
+            [formControl]="searchCtrl"
+          >
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </form>
+    </div>
+
+    <ng-container *ngIf="(beers$ | async) as beers">
+      <h2 class="dsc-search__title">Search Result</h2>
+      <div class="dsc-results">
+        <mat-card 
+          *ngFor="let beer of beers"
+          [routerLink]="[beer.id]"
+        >
+          <app-card-beer
+            [id]="beer.id"
+            [title]="beer.name"
+            [description]="beer.description"
+            [img]="beer.image_url"
+          ></app-card-beer>
+        </mat-card>
+      </div>
+  
+      <mat-paginator
+                [length]="200"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="[10, 25]"
+                (page)="changePage($event)"
+                aria-label="Select page">
+      </mat-paginator>
+    </ng-container>
+
+  </section>
+</div>

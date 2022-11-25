@@ -1,0 +1,81 @@
+:host {
+  display: block;
+}
+
+.center {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.general-wrapper {
+  padding: 30px 0;
+  background: transparent url('../../../../assets/home-1-emailer-bg.jpg');
+
+  .dsc-details {
+    max-width: 800px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+
+    &__left {
+      width: 30%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      figure {
+        width: fit-content;
+        img {
+          max-height: 500px;
+        }
+      }
+    }
+
+    &__right {
+      width: 70%;
+      padding-left: 30px;
+      h3 {
+        margin-bottom: 20px;
+      }
+      .dsc-right {
+        &__title {
+          font-weight: 600;
+          font-stretch: normal;
+          font-size: 14px;
+          line-height: 22px;
+          font-family: Oswald;
+          color: #222222;
+          height: 22px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space:nowrap;
+          margin-bottom: 6px;
+          &--maintitle {
+            font-weight: 700;
+            margin-bottom: 20px;
+          }
+        }
+        &__subtitle {
+          overflow: hidden;
+          font-family: Oswald;
+          font-family: inherit;
+          color: #222222;
+          margin-bottom: 10px;
+        }
+      }
+
+      mat-list {
+        max-width: 390px;
+
+        .dsc-list__copie {
+          font-family: Oswald;
+          font-family: inherit;
+          color: #222222;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

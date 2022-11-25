@@ -1,0 +1,29 @@
+<section class="welcome">
+  <div class="welcome-background">
+    <figure class="wrapper-move wrapper-move--left animated backInLeft">
+      <img width="300" src="../../../assets/beer-home.png" alt="beer-pilsner">
+    </figure>
+    <figure class="wrapper-img">
+      <img src="assets/slider-1-logo.png" alt="img-logo">
+    </figure>
+    <figure class="wrapper-move wrapper-move--right animated backInRight">
+      <img width="200" src="../../../assets/ice-home.png" alt="beer-pilsner">
+    </figure>
+  </div>
+</section>
+<section class="search">
+
+  <h1 class="search__title">Join Us For A Beer</h1>
+  <p class="search__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur esse corrupti magnam porro? Quae, laboriosam animi quia voluptates maiores ad dicta? Quos obcaecati ad error magnam natus. Possimus, laudantium quas?</p>
+
+  <div class="cards">
+    
+      <app-card-beer
+        *ngFor="let beer of kindOfBeers"
+        [id]="beer.id"
+        [title]="beer.title"
+        [description]="beer.subtitle"
+        [img]="'../../../assets/beer-' + beer.id + '.png'"
+      ></app-card-beer>
+    </div>
+</section>
